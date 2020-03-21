@@ -1,0 +1,3 @@
+MidiHandlers.cpp:11:6:void Handle_Clock()	8	static
+MidiHandlers.cpp:19:6:void Handle_Start()	8	static
+MidiHandlers.cpp:24:6:void Handle_Stop()	8	static

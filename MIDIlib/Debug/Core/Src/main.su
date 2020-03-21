@@ -1,0 +1,12 @@
+main.cpp:79:5:int main()	16	static
+main.cpp:171:6:void SystemClock_Config()	88	static
+main.cpp:205:13:void MX_I2C2_Init()	8	static
+main.cpp:248:13:void MX_SPI2_Init()	8	static
+main.cpp:286:13:void MX_TSC_Init()	8	static
+main.cpp:326:13:void MX_USART3_UART_Init()	8	static
+main.cpp:359:13:void MX_GPIO_Init()	48	static
+main.cpp:402:6:void HAL_UART_RxCpltCallback(UART_HandleTypeDef*)	16	static,ignoring_inline_asm
+main.cpp:411:6:void Error_Handler()	8	static
+main.cpp:416:1:void __static_initialization_and_destruction_0(int, int)	16	static
+main.cpp:416:1:cpp)	8	static
+main.cpp:416:1:cpp)	8	static
