@@ -2,7 +2,8 @@
  * MidiHandlers.cpp
  *
  *  Created on: Mar 20, 2020
- *      Author: Spiros
+ *      Author: Spiros Makris
+ *
  */
 
 #include "MidiHandlers.h"

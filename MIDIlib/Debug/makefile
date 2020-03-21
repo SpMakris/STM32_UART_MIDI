@@ -55,8 +55,8 @@ MIDIlib.bin \
 all: MIDIlib.elf secondary-outputs
 
 # Tool invocations
-MIDIlib.elf: $(OBJS) $(USER_OBJS) C:\Users\Spiros\STM32CubeIDE\workspace_1.2.0\MIDIlib\STM32F072RBTX_FLASH.ld
-	arm-none-eabi-g++ -o "MIDIlib.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"C:\Users\Spiros\STM32CubeIDE\workspace_1.2.0\MIDIlib\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MIDIlib.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+MIDIlib.elf: $(OBJS) $(USER_OBJS) C:\Users\Spiros\Documents\GitHub\STM32_UART_MIDI\MIDIlib\STM32F072RBTX_FLASH.ld
+	arm-none-eabi-g++ -o "MIDIlib.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"C:\Users\Spiros\Documents\GitHub\STM32_UART_MIDI\MIDIlib\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MIDIlib.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

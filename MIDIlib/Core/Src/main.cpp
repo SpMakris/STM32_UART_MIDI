@@ -68,6 +68,8 @@ static void MX_USART3_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+/* Initialize MidiInterface object */
 MidiInterface Port;
 
 /* USER CODE END 0 */
@@ -104,14 +106,15 @@ int main(void) {
 	MX_TSC_Init();
 	MX_USART3_UART_Init();
 	/* USER CODE BEGIN 2 */
-//	Port.begin(1, &huart3, &huart3);
-//	Port.setHandleClock(Handle_Clock);
-//
-//	Port.setHandleStart(Handle_Start);
-//
-//	Port.setHandleStop(Handle_Stop);
-	uint8_t incoming;
-	HAL_UART_Receive_IT(&huart3, &incoming, 1);
+	/*Specify MIDI port input channel and in/out port*/
+	Port.begin(1, &huart3, &huart3);
+	/*Set Callbacks*/
+	Port.setHandleClock(Handle_Clock);
+
+	Port.setHandleStart(Handle_Start);
+
+	Port.setHandleStop(Handle_Stop);
+
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
@@ -120,46 +123,8 @@ int main(void) {
 		/* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */
+		Port.read();
 
-//		uint8_t Receive[1];
-//
-//		if (Port.read()) {
-//			switch (Port.getType()) {
-//
-//			case (MidiType::Start):
-//				i = 0;
-//				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9,
-//						GPIO_PinState::GPIO_PIN_SET);
-//				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7,
-//						GPIO_PinState::GPIO_PIN_SET);
-//				break;
-//
-//			case (MidiType::Clock):
-//				i++;
-//				if (i / 12 == 1) {
-//					HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_9);
-//					i = 0;
-//				}
-//				break;
-//			case (MidiType::Stop):
-//				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_9,
-//						GPIO_PinState::GPIO_PIN_RESET);
-//				HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7,
-//						GPIO_PinState::GPIO_PIN_RESET);
-//				break;
-//			}
-//		}
-//	if (HAL_UART_Receive(&huart3, Receive, 1, 1) == HAL_OK) {
-//
-//		if (Receive[0] == 248) {
-//			i++;
-//			if (i / 12 == 1) {
-//				HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_9);
-//				i = 0;
-//			}
-//		}
-//	}
-		//HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_9);
 	}
 
 	/* USER CODE END 3 */
