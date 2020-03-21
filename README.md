@@ -33,3 +33,4 @@ To use this project with a different board:
 - Add the class initialization and callbacks in your main.cpp (refer to the guide above and the original main.cpp file)
 - Add the MIDIHandler .cpp and .h files in the appropriate Core/Inc and Core/Src folders and add #include "MIDIHandler.h" and #include "MIDI.h" in main.cpp
 - If using a family other than stm32f0 remember to change #include "stm32f0xx_hal.h" to the appropriate one for your model
+- Don't forget to set the correct output pins in the Start, Clock and Stop handler functions!
