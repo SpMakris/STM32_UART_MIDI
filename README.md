@@ -24,4 +24,12 @@ The USART needs to be configured as per MIDI specification:
 I have only verified functionality on the STM32F072 microcontroller. However, if there are HAL drivers for the board you are using, changing #include "stm32f0xx_hal.h" should suffice.
 If HAL drivers are not available, you will have to manually change the HAL_UART_ commands to those appropriate for your device. No other changes should be needed.
 
-# 
+# Example Usage
+The MIDIlib folder contains a project for STM32Cube IDE configured for the 32f072B discovery board. It is configured to use callbacks and flash an LED in sync with an incoming MIDI clock. All the callback functions are in the MIDIHandlers.h and MIDIHandlers.cpp files. 
+To use this project with a different board:
+- Create a new project and select your board in the configuration wizard. Set language to C++
+- Configure the appropriate USART peripheral of your board with the settings described above
+- Generate code, rename main.c to main.cpp
+- Add the class initialization and callbacks in your main.cpp (refer to the guide above and the original main.cpp file)
+- Add the MIDIHandler .cpp and .h files in the appropriate Core/Inc and Core/Src folders and add #include "MIDIHandler.h" and #include "MIDI.h" in main.cpp
+- If using a family other than stm32f0 remember to change #include "stm32f0xx_hal.h" to the appropriate one for your model
