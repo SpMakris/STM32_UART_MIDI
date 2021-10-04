@@ -7,7 +7,7 @@ This implements the MidiInterface class as you know it from the arduino ecosyste
 The port is intended for use with HAL drivers. For STM32Cube IDE:
 - Copy the MIDI.h file to the Core/Inc folder
 - Copy the MIDI.cpp file to the Core/Src folder
-- Configure your project to use cpp. It seems that for the compiler to use C++ for your main file, it needs to be renamed to main.cpp . Remember to change it back to main.c before generating hardware configuration files using the CubeMX tool
+- Configure your project to use cpp. For the compiler to use C++ for your main file, it needs to be renamed to main.cpp . Remember to change it back to main.c before generating hardware configuration files using the CubeMX tool
 - Add #include "MIDI.h" in your main.cpp
 - Create a MidiInterface object outside the main() function (ie declare as a global variable)
 - Before while(1) and after all hardware initialization has taken place, call myInterface.begin(Channel, serial_in, serial_out). Directly below set the callback handlers used, if any. (Refer to the arduino documentation for Callback usage)
